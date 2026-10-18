@@ -547,3 +547,125 @@ footer a:hover {
         font-size: 1.35rem;
     }
 }
+
+/* ===================================================
+   SECCIÓN: CÓMO LLEGAR (TRANSPORTE)
+   =================================================== */
+.transport-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.transport-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(226, 240, 203, 0.9);
+    border-radius: 14px;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.transport-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.transport-badge {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #e2f0cb;
+    color: #3b5a46;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.transport-card h3 {
+    font-size: 1.8rem;
+    color: #436e52;
+    margin-bottom: 0.6rem;
+}
+
+.transport-card p {
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+.transport-points {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 1.4rem;
+}
+
+.transport-points li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.transport-points li::before {
+    content: "📍";
+    position: absolute;
+    left: 0;
+    font-size: 0.85rem;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #25d366;
+    color: #ffffff !important;
+    padding: 0.75rem 1.4rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+    margin-top: auto;
+    text-align: center;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebc59;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+}
+
+.btn-sturla {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #5c8d6d;
+    color: #ffffff !important;
+    padding: 0.75rem 1.4rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(92, 141, 109, 0.25);
+    margin-top: auto;
+    text-align: center;
+}
+
+.btn-sturla:hover {
+    background-color: #3b5a46;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(92, 141, 109, 0.35);
+}
