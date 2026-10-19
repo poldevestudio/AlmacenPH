@@ -58,7 +58,7 @@ nav ul li a:hover {
 
 .hero {
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('img/banner-humedal.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url('img/atardecer-isla.jpg');
     background-size: cover;
     background-position: center;
     padding: 6rem 5%;
@@ -1091,5 +1091,265 @@ footer a:hover {
     }
     .whatsapp-tooltip {
         display: none;
+    }
+}
+
+/* ===================================================
+   SECCIÓN: MOSTRADOR / ESCAPARATE DE ALMACÉN PH
+   =================================================== */
+.services-container-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.2rem;
+    align-items: center;
+}
+
+.services-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 1.2rem 0;
+}
+
+.services-list li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.services-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #5c8d6d;
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+.services-motto {
+    font-size: 1.6rem;
+    color: #3b5a46;
+    margin-top: 1.2rem;
+}
+
+.store-showcase-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(92, 141, 109, 0.15);
+    border: 1px solid rgba(226, 240, 203, 0.95);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.store-showcase-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(92, 141, 109, 0.22);
+}
+
+.store-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 310px;
+}
+
+.store-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(59, 90, 70, 0.92);
+    color: #ffffff;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.store-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.store-showcase-card:hover .store-img {
+    transform: scale(1.04);
+}
+
+.store-caption {
+    padding: 1.1rem 1.4rem;
+    background: #fafdf7;
+    border-top: 1px solid #edf5e7;
+}
+
+.store-location-text {
+    font-size: 1.05rem;
+    color: #2e4a37;
+    margin: 0 0 0.3rem 0;
+}
+
+.store-subtext {
+    font-size: 0.9rem;
+    color: #6d8e75;
+    font-style: italic;
+    display: block;
+}
+
+/* ===================================================
+   SECCIONES DE HISTORIA Y NATURALEZA CON FOTOS
+   =================================================== */
+.history-content-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.2rem;
+    align-items: center;
+}
+
+.history-content-grid.reverse-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+}
+
+.history-media-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(226, 240, 203, 0.95);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.history-media-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.history-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 270px;
+}
+
+.history-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.history-media-card:hover .history-img {
+    transform: scale(1.04);
+}
+
+.history-caption {
+    padding: 0.95rem 1.3rem;
+    font-size: 0.95rem;
+    color: #3b5a46;
+    background: #fafdf7;
+    margin: 0;
+    line-height: 1.45;
+    border-top: 1px solid #edf5e7;
+}
+
+/* ===================================================
+   GALERÍA: POSTALES DE LA ISLA (HISTORIA.HTML)
+   =================================================== */
+.postales-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.postal-card {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(226, 240, 203, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.postal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(92, 141, 109, 0.16);
+}
+
+.postal-img-wrap {
+    height: 210px;
+    position: relative;
+    overflow: hidden;
+}
+
+.postal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.postal-card:hover .postal-img {
+    transform: scale(1.05);
+}
+
+.postal-info {
+    padding: 1.1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fafdf7;
+}
+
+.postal-title {
+    font-size: 1.25rem;
+    color: #3b5a46;
+    margin: 0 0 0.4rem 0;
+    font-weight: 700;
+}
+
+.postal-desc {
+    font-size: 0.92rem;
+    color: #555555;
+    line-height: 1.4;
+    margin: 0;
+}
+
+@media (max-width: 880px) {
+    .services-container-grid,
+    .history-content-grid,
+    .history-content-grid.reverse-grid {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+    }
+    
+    .history-content-grid.reverse-grid .history-media-card {
+        order: 2;
+    }
+    .history-content-grid.reverse-grid .history-text-col {
+        order: 1;
+    }
+    
+    .postales-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+    }
+    
+    .store-img-wrapper {
+        height: 260px;
+    }
+    
+    .history-img-wrapper {
+        height: 240px;
     }
 }
