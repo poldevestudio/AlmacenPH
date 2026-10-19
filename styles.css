@@ -94,9 +94,8 @@ main {
 main.historia-main-container {
     max-width: 100%;
     padding: 4rem 5%;
-    /* Filtro de color suave */
-    background-image: linear-gradient(rgba(243, 249, 236, 0.2), rgba(226, 240, 203, 0.2)), url('img/lancha.jpg');
-    background-size: cover; /* Vuelve a darle zoom para que llene el espacio */
+    background-image: linear-gradient(rgba(12, 20, 16, 0.35), rgba(12, 20, 16, 0.45)), url('img/atardecer-isla.jpg');
+    background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
@@ -104,11 +103,112 @@ main.historia-main-container {
 main.historia-main-container .content-section {
     max-width: 1200px;
     margin: 0 auto 3rem auto;
-    background: rgba(255, 255, 255, 0.45); /* Cuadros mucho más transparentes */
-    backdrop-filter: blur(2px); /* Menos desenfoque para ver la panadería nítida */
-    -webkit-backdrop-filter: blur(2px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(16, 26, 20, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #f7faf5;
+}
+
+main.historia-main-container .content-section h2 {
+    color: #a3e4b7;
+    border-bottom: 2px dashed rgba(163, 228, 183, 0.35);
+}
+
+main.historia-main-container .content-section h3 {
+    color: #d1f2dc;
+}
+
+main.historia-main-container .content-section p,
+main.historia-main-container .content-section ul,
+main.historia-main-container .content-section li {
+    color: #f0f4ee;
+}
+
+main.historia-main-container .content-section strong {
+    color: #ffffff;
+}
+
+main.historia-main-container .tip-viajero {
+    background: rgba(45, 75, 55, 0.65);
+    border-left: 4px solid #81c784;
+    color: #e8f5e9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+main.historia-main-container .tip-viajero strong {
+    color: #ffffff;
+}
+
+main.historia-main-container .history-media-card {
+    background: rgba(22, 34, 26, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+main.historia-main-container .history-caption {
+    background: rgba(18, 28, 22, 0.95);
+    color: #d1fae5;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+main.historia-main-container .history-caption strong {
+    color: #ffffff;
+}
+
+main.historia-main-container .postal-card {
+    background: rgba(22, 34, 26, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+main.historia-main-container .postal-info {
+    background: rgba(18, 28, 22, 0.95);
+}
+
+main.historia-main-container .postal-title {
+    color: #d1fae5;
+}
+
+main.historia-main-container .transport-accordion {
+    background: rgba(26, 38, 30, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+main.historia-main-container .transport-accordion[open] {
+    background: rgba(20, 32, 24, 0.96);
+    border-color: #81c784;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+main.historia-main-container .accordion-title-wrap h3 {
+    color: #a3e4b7;
+}
+
+main.historia-main-container .accordion-title-wrap h3 small {
+    color: #c4ebd0;
+}
+
+main.historia-main-container .accordion-chevron {
+    border-right-color: #a3e4b7;
+    border-bottom-color: #a3e4b7;
+}
+
+main.historia-main-container .accordion-header:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+main.historia-main-container .accordion-content p {
+    color: #f0f4ee;
+}
+
+main.historia-main-container .transport-points li {
+    color: #f0f4ee;
+}
+
+main.historia-main-container .transport-points li strong {
+    color: #ffffff;
 }
 
 .content-section {
@@ -213,6 +313,10 @@ footer a:hover {
     }
     .hero h2 {
         font-size: 2.5rem;
+    }
+    main.historia-main-container {
+        padding: 2.5rem 3.5%;
+        background-attachment: scroll;
     }
 }
 
