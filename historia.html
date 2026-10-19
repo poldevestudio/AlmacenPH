@@ -4,9 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia - Isla Martín García</title>
-    <link rel="stylesheet" href="styles.css?v=4.0">
+    <link rel="stylesheet" href="styles.css?v=4.2">
+    <style>
+        /* Estilos críticos para asegurar carga instantánea y responsiva en celulares */
+        .intro-splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, #ffffff 0%, #f6faf1 55%, #e6f0da 100%);
+            z-index: 999999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .intro-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 440px;
+        }
+        .intro-stage-container {
+            position: relative;
+            width: min(80vw, 340px);
+            height: min(80vw, 340px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .c-step {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .c-step.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .skip-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #cce2bb;
+            color: #497255;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-family: sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            z-index: 20;
+        }
+    </style>
 </head>
 <body>
+    <!-- Pantalla de bienvenida interactiva: Animación del Carpincho en la Isla -->
+    <div id="intro-splash" class="intro-splash" aria-label="Bienvenida a la Isla Martín García">
+        <button id="skip-intro" class="skip-btn" type="button">Saltar intro ✕</button>
+        
+        <div class="intro-content-wrapper">
+            <div class="intro-stage-container">
+                <!-- Charco de agua con aureolas / ondas circulares -->
+                <div class="water-pond-ambient" id="water-pond">
+                    <div class="water-ring ring-1"></div>
+                    <div class="water-ring ring-2"></div>
+                    <div class="water-ring ring-3"></div>
+                </div>
+
+                <!-- Contenedor del carpincho con las tres fases -->
+                <div class="carpincho-stage" id="carpincho-stage">
+                    <!-- Fase 1: Caminando hacia el charco -->
+                    <img src="img/carpincho-paso1.png" alt="Carpincho caminando" class="c-step c-step1 active" id="c-step1">
+                    <!-- Fase 2: Llega a la orilla y mira al visitante -->
+                    <img src="img/carpincho-paso2.png" alt="Carpincho en la orilla mirando" class="c-step c-step2" id="c-step2">
+                    <!-- Fase 3: Salto y chapuzón en el agua -->
+                    <img src="img/carpincho-paso3.png" alt="Carpincho chapuzón" class="c-step c-step3" id="c-step3">
+                </div>
+
+                <!-- Gotas y salpicaduras de agua animadas -->
+                <div class="water-splash-fx" id="water-splash-fx">
+                    <span class="splash-drop drop-1"></span>
+                    <span class="splash-drop drop-2"></span>
+                    <span class="splash-drop drop-3"></span>
+                    <span class="splash-drop drop-4"></span>
+                </div>
+            </div>
+
+            <!-- Mensaje de bienvenida a la Isla -->
+            <div class="intro-caption" id="intro-caption">
+                <p class="intro-welcome">Bienvenidos a la</p>
+                <h2 class="intro-title">Isla Martín García</h2>
+                <p class="intro-island">Reserva Natural y Sitio Histórico</p>
+            </div>
+        </div>
+    </div>
     <header>
         <nav>
             <ul>
@@ -211,6 +315,70 @@
                     });
                 }
             });
+        });
+    </script>
+
+    <!-- Script de Animación del Carpincho (Exclusivo para La Isla) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const splash = document.getElementById('intro-splash');
+            const skipBtn = document.getElementById('skip-intro');
+            const step1 = document.getElementById('c-step1');
+            const step2 = document.getElementById('c-step2');
+            const step3 = document.getElementById('c-step3');
+            const splashFx = document.getElementById('water-splash-fx');
+            const caption = document.getElementById('intro-caption');
+
+            let hasFinished = false;
+
+            function finishIntro() {
+                if (hasFinished) return;
+                hasFinished = true;
+                if (splash) {
+                    splash.classList.add('intro-fade-out');
+                    setTimeout(() => {
+                        splash.style.display = 'none';
+                    }, 800);
+                }
+            }
+
+            // Si el usuario hace click en Saltar o en la pantalla
+            if (skipBtn) {
+                skipBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    finishIntro();
+                });
+            }
+            if (splash) {
+                splash.addEventListener('click', finishIntro);
+            }
+
+            // Secuencia del Carpincho:
+            // 0s - 1.25s: Camina hacia el charco
+            setTimeout(() => {
+                if (hasFinished) return;
+                if (step1) step1.classList.remove('active');
+                if (step2) step2.classList.add('active');
+            }, 1250);
+
+            // 2.45s: Salto y chapuzón en el agua
+            setTimeout(() => {
+                if (hasFinished) return;
+                if (step2) step2.classList.remove('active');
+                if (step3) step3.classList.add('active');
+                if (splashFx) splashFx.classList.add('active');
+            }, 2450);
+
+            // 3.1s: Aparece el mensaje de bienvenida a la Isla
+            setTimeout(() => {
+                if (hasFinished) return;
+                if (caption) caption.classList.add('visible');
+            }, 3100);
+
+            // 4.35s: Cierre automático y paso al contenido
+            setTimeout(() => {
+                finishIntro();
+            }, 4350);
         });
     </script>
 </body>

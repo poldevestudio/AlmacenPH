@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Almacén PH - Isla Martín García</title>
-    <link rel="stylesheet" href="styles.css?v=4.0">
+    <link rel="stylesheet" href="styles.css?v=4.2">
     <style>
         /* Estilos críticos para asegurar carga instantánea y responsiva en celulares */
         .intro-splash {
@@ -71,43 +71,35 @@
     </style>
 </head>
 <body>
-    <!-- Pantalla de bienvenida interactiva: Animación del Carpincho -->
+    <!-- Pantalla de bienvenida interactiva: Animación del Gato con Carrito de Compras -->
     <div id="intro-splash" class="intro-splash" aria-label="Bienvenida Almacén PH">
         <button id="skip-intro" class="skip-btn" type="button">Saltar intro ✕</button>
         
-        <div class="intro-content-wrapper">
-            <div class="intro-stage-container">
-                <!-- Charco de agua con aureolas / ondas circulares -->
-                <div class="water-pond-ambient" id="water-pond">
-                    <div class="water-ring ring-1"></div>
-                    <div class="water-ring ring-2"></div>
-                    <div class="water-ring ring-3"></div>
-                </div>
-
-                <!-- Contenedor del carpincho con las tres fases -->
-                <div class="carpincho-stage" id="carpincho-stage">
-                    <!-- Fase 1: Caminando hacia el charco -->
-                    <img src="img/carpincho-paso1.png" alt="Carpincho caminando" class="c-step c-step1 active" id="c-step1">
-                    <!-- Fase 2: Llega a la orilla y mira al visitante -->
-                    <img src="img/carpincho-paso2.png" alt="Carpincho en la orilla mirando" class="c-step c-step2" id="c-step2">
-                    <!-- Fase 3: Salto y chapuzón en el agua -->
-                    <img src="img/carpincho-paso3.png" alt="Carpincho chapuzón" class="c-step c-step3" id="c-step3">
-                </div>
-
-                <!-- Gotas y salpicaduras de agua animadas -->
-                <div class="water-splash-fx" id="water-splash-fx">
-                    <span class="splash-drop drop-1"></span>
-                    <span class="splash-drop drop-2"></span>
-                    <span class="splash-drop drop-3"></span>
-                    <span class="splash-drop drop-4"></span>
-                </div>
+        <div class="cat-splash-wrapper">
+            <!-- Título de Bienvenida -->
+            <div class="cat-intro-header" id="cat-intro-header">
+                <p class="cat-intro-subtitle">¡Haciendo las compras en la Isla!</p>
+                <h2 class="cat-intro-title">Almacén PH</h2>
+                <p class="cat-intro-caption">Todo lo que necesitás en la Isla Martín García</p>
             </div>
 
-            <!-- Mensaje sutil de bienvenida -->
-            <div class="intro-caption" id="intro-caption">
-                <p class="intro-welcome">Bienvenidos al</p>
-                <h2 class="intro-title">Almacén PH</h2>
-                <p class="intro-island">Isla Martín García</p>
+            <!-- Escenario donde el gato cruza con su carrito de compras -->
+            <div class="cat-stage-track">
+                <!-- Línea de suelo / vereda rústica -->
+                <div class="cat-ground-line"></div>
+
+                <!-- Contenedor animado del gato con carrito -->
+                <div class="cat-cart-mover">
+                    <div class="cat-cart-sprite-wrap">
+                        <img src="img/gato-almacen-cart.png" alt="Gatito con bandana cowboy y carrito de compras lleno de mercadería" class="cat-cart-img">
+                    </div>
+                    <!-- Líneas de velocidad sutiles -->
+                    <div class="cat-speed-lines">
+                        <span class="speed-line l1"></span>
+                        <span class="speed-line l2"></span>
+                        <span class="speed-line l3"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -264,11 +256,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const splash = document.getElementById('intro-splash');
             const skipBtn = document.getElementById('skip-intro');
-            const step1 = document.getElementById('c-step1');
-            const step2 = document.getElementById('c-step2');
-            const step3 = document.getElementById('c-step3');
-            const splashFx = document.getElementById('water-splash-fx');
-            const caption = document.getElementById('intro-caption');
+            const catHeader = document.getElementById('cat-intro-header');
 
             let hasFinished = false;
 
@@ -279,7 +267,7 @@
                     splash.classList.add('intro-fade-out');
                     setTimeout(() => {
                         splash.style.display = 'none';
-                    }, 800);
+                    }, 500);
                 }
             }
 
@@ -294,33 +282,18 @@
                 splash.addEventListener('click', finishIntro);
             }
 
-            // Secuencia de animación:
-            // 0s - 1.25s: Camina hacia el charco
+            // Secuencia del Gato con Carrito:
+            // 0.25s: Aparece el mensaje de bienvenida con animación fluida
             setTimeout(() => {
                 if (hasFinished) return;
-                // 1.25s: Llega al borde del agua y mira al visitante
-                if (step1) step1.classList.remove('active');
-                if (step2) step2.classList.add('active');
-            }, 1250);
+                if (catHeader) catHeader.classList.add('visible');
+            }, 250);
 
+            // 3.85s: El gato completa su recorrido con el carrito (+1.3s adicionales para ritmo cómodo); se cierra suavemente
             setTimeout(() => {
                 if (hasFinished) return;
-                // 2.45s: ¡Se tira al agua con chapuzón y salpicaduras!
-                if (step2) step2.classList.remove('active');
-                if (step3) step3.classList.add('active');
-                if (splashFx) splashFx.classList.add('active');
-            }, 2450);
-
-            setTimeout(() => {
-                if (hasFinished) return;
-                // 3.1s: Aparece el mensaje de bienvenida
-                if (caption) caption.classList.add('visible');
-            }, 3100);
-
-            setTimeout(() => {
-                // 4.35s (+0.5s extra): Tiempo para leer cómodamente el mensaje de bienvenida antes de pasar a la web
                 finishIntro();
-            }, 4350);
+            }, 3850);
         });
     </script>
 
