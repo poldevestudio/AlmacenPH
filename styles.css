@@ -62,9 +62,9 @@ nav ul li a:hover {
 
 .hero {
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url('img/atardecer-isla.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url('img/isla-panoramica.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 60%;
     padding: 6rem 5%;
     text-align: center;
     border-bottom: 2px solid #e2f0cb;
@@ -74,7 +74,7 @@ nav ul li a:hover {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
@@ -82,7 +82,7 @@ nav ul li a:hover {
     max-width: 800px;
     margin: 0 auto;
     color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 main {
@@ -206,6 +206,10 @@ footer a:hover {
         margin-top: 1rem;
         flex-wrap: wrap;
         justify-content: center;
+    }
+    .hero {
+        padding: 4.5rem 5%;
+        background-position: center 65%;
     }
     .hero h2 {
         font-size: 2.5rem;
