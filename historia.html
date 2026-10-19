@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia - Isla Martín García</title>
-    <link rel="stylesheet" href="styles.css?v=3.0">
+    <link rel="stylesheet" href="styles.css?v=3.1">
 </head>
 <body>
     <header>
@@ -41,59 +41,74 @@
 
         <section class="content-section">
             <h2>¿CÓMO LLEGAR A LA ISLA?</h2>
-            <p>Para visitar la Isla existen opciones fluviales y aéreas de transporte, ideales tanto para una escapada de día completo como para estadías prolongadas</p>
+            <p>Para visitar la Isla existen opciones fluviales y aéreas de transporte, ideales tanto para una escapada de día completo como para estadías prolongadas:</p>
             
-            <div class="transport-grid">
+            <div class="transport-accordion-container">
                 <!-- Vía Fluvial 1: Sturla Viajes -->
-                <div class="transport-card">
-                    <div>
-                        <span class="transport-badge">🚢 Vía Fluvial</span>
-                        <h3>Sturla Viajes</h3>
+                <details class="transport-accordion" name="transport-options">
+                    <summary class="accordion-header">
+                        <div class="accordion-title-wrap">
+                            <span class="transport-badge">🚢 Vía Fluvial</span>
+                            <h3>Sturla Viajes</h3>
+                        </div>
+                        <span class="accordion-chevron" aria-hidden="true"></span>
+                    </summary>
+                    <div class="accordion-content">
                         <p>La opción tradicional de navegación en cómodas lanchas rápidas y catamaranes. Travesía panorámica de aproximadamente 2 horas y media por el Delta y el Río de la Plata.</p>
                         <ul class="transport-points">
                             <li><strong>Puerto Madero:</strong> Dársena Norte (CABA).</li>
                             <li><strong>Tigre:</strong> Estación Fluvial.</li>
                             <li>Salidas regulares los fines de semana y feriados.</li>
                         </ul>
+                        <a href="https://www.sturlaviajes.tur.ar/" target="_blank" rel="noopener noreferrer" class="btn-sturla">
+                            Ver Horarios en Sturla ↗
+                        </a>
                     </div>
-                    <a href="https://www.sturlaviajes.tur.ar/" target="_blank" rel="noopener noreferrer" class="btn-sturla">
-                        Ver Horarios en Sturla ↗
-                    </a>
-                </div>
+                </details>
 
                 <!-- Vía Fluvial 2: Rumbo Delta -->
-                <div class="transport-card">
-                    <div>
-                        <span class="transport-badge">⛵ Catamaranes</span>
-                        <h3>Rumbo Delta</h3>
+                <details class="transport-accordion" name="transport-options">
+                    <summary class="accordion-header">
+                        <div class="accordion-title-wrap">
+                            <span class="transport-badge">⛵ Catamaranes</span>
+                            <h3>Rumbo Delta</h3>
+                        </div>
+                        <span class="accordion-chevron" aria-hidden="true"></span>
+                    </summary>
+                    <div class="accordion-content">
                         <p>Ofrece excursiones de navegación, paseos y salidas por los ríos del Delta y hacia la Isla Martín García.</p>
                         <ul class="transport-points">
                             <li><strong>Tigre:</strong> Salidas desde la zona del puerto fluvial y Tigre centro.</li>
                             <li>Navegación en catamarán con amplias comodidades y cubierta panorámica.</li>
                             <li>Excursiones grupales y paseos turísticos.</li>
                         </ul>
+                        <a href="https://rumbodeltacatamaranes.com.ar/" target="_blank" rel="noopener noreferrer" class="btn-sturla">
+                            Ver Rumbo Delta ↗
+                        </a>
                     </div>
-                    <a href="https://rumbodeltacatamaranes.com.ar/" target="_blank" rel="noopener noreferrer" class="btn-sturla">
-                        Ver Rumbo Delta ↗
-                    </a>
-                </div>
+                </details>
 
                 <!-- Vía Aérea: Vuelos Privados -->
-                <div class="transport-card">
-                    <div>
-                        <span class="transport-badge">🛩️ Vía Aérea</span>
-                        <h3>Vuelos Privados en Avioneta (máximo 4 personas)</h3>
+                <details class="transport-accordion" name="transport-options">
+                    <summary class="accordion-header">
+                        <div class="accordion-title-wrap">
+                            <span class="transport-badge">🛩️ Vía Aérea</span>
+                            <h3>Vuelos Privados en Avioneta <small>(máx. 4 personas)</small></h3>
+                        </div>
+                        <span class="accordion-chevron" aria-hidden="true"></span>
+                    </summary>
+                    <div class="accordion-content">
                         <p>Una alternativa rápida, exclusiva y con vistas aéreas increíbles de todo el Delta. Vuelos en avioneta que aterrizan directamente en la pista del aeródromo de la isla.</p>
                         <ul class="transport-points">
                             <li>Vuelos directos y traslados personalizados a demanda.</li>
                             <li>Aterrizaje en el Aeródromo de la Isla Martín García.</li>
                             <li>Ideal para escapadas ejecutivas o emergencias.</li>
                         </ul>
+                        <a href="https://wa.me/5491124702811?text=Hola!%20Quisiera%20consultar%20por%20los%20vuelos%20privados%20en%20avioneta%20a%20la%20Isla%20Mart%C3%ADn%20Garc%C3%ADa." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" id="whatsapp-vuelos">
+                            💬 Consultar Vuelos por WhatsApp
+                        </a>
                     </div>
-                    <a href="https://wa.me/5491124702811?text=Hola!%20Quisiera%20consultar%20por%20los%20vuelos%20privados%20en%20avioneta%20a%20la%20Isla%20Mart%C3%ADn%20Garc%C3%ADa." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" id="whatsapp-vuelos">
-                        💬 Consultar Vuelos
-                    </a>
-                </div>
+                </details>
             </div>
         </section>
     </main>
@@ -108,7 +123,20 @@
         <span class="whatsapp-tooltip">¿Dudas o pedidos? ¡Escribinos!</span>
         <svg viewBox="0 0 32 32" width="34" height="34" fill="#ffffff">
             <path d="M16.002 2C8.28 2 2 8.28 2 16.002c0 2.597.712 5.034 1.947 7.127L2 30l7.07-1.895A13.94 13.94 0 0 0 16.002 30C23.723 30 30 23.723 30 16.002 30 8.28 23.723 2 16.002 2zm7.98 19.822c-.332.934-1.928 1.787-2.698 1.901-.689.103-1.56.146-2.518-.159-.582-.186-1.326-.432-2.278-.842-4.009-1.733-6.626-5.77-6.827-6.035-.201-.266-1.632-2.169-1.632-4.137s1.034-2.936 1.401-3.336c.367-.4.8-.5 1.066-.5.267 0 .534.003.766.015.246.012.574-.093.899.687.333.801 1.133 2.769 1.233 2.97.1.201.167.433.033.7-.133.267-.2.433-.4.667-.2.233-.42.52-.6.7-.2.2-.408.416-.175.816.233.4 1.036 1.71 2.224 2.769 1.527 1.362 2.815 1.784 3.214 1.984.4.2.634.167.867-.1.233-.267 1-1.167 1.267-1.567.267-.4.533-.333.9-.2s2.333 1.1 2.733 1.3c.4.2.667.3.767.467.1.166.1.966-.233 1.9z"/>
-        </svg>
     </a>
+
+    <!-- Compatibilidad de acordeón en navegadores móviles anteriores -->
+    <script>
+        const accordions = document.querySelectorAll('.transport-accordion');
+        accordions.forEach(item => {
+            item.addEventListener('toggle', () => {
+                if (item.open) {
+                    accordions.forEach(other => {
+                        if (other !== item) other.removeAttribute('open');
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -549,8 +549,127 @@ footer a:hover {
 }
 
 /* ===================================================
-   SECCIÓN: CÓMO LLEGAR (TRANSPORTE)
+   SECCIÓN: CÓMO LLEGAR (TRANSPORTE DESPLEGABLE)
    =================================================== */
+.transport-accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-top: 1.6rem;
+}
+
+.transport-accordion {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(226, 240, 203, 0.95);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+}
+
+.transport-accordion[open] {
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(92, 141, 109, 0.14);
+    border-color: #5c8d6d;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.4rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.accordion-header::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-header:hover {
+    background-color: rgba(246, 250, 241, 0.6);
+}
+
+.accordion-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.accordion-title-wrap h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #3b5a46;
+    line-height: 1.2;
+}
+
+.accordion-title-wrap h3 small {
+    font-size: 0.95rem;
+    color: #6d8e75;
+    font-weight: normal;
+    font-family: 'Nunito', sans-serif;
+}
+
+.accordion-chevron {
+    width: 12px;
+    height: 12px;
+    border-right: 2.5px solid #5c8d6d;
+    border-bottom: 2.5px solid #5c8d6d;
+    transform: rotate(45deg);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.transport-accordion[open] .accordion-chevron {
+    transform: rotate(-135deg);
+}
+
+.accordion-content {
+    padding: 0 1.4rem 1.4rem 1.4rem;
+    animation: fadeInContent 0.35s ease;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordion-content p {
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+    .accordion-header {
+        padding: 0.95rem 1.1rem;
+    }
+    .accordion-title-wrap {
+        gap: 8px;
+    }
+    .accordion-title-wrap h3 {
+        font-size: 1.35rem;
+    }
+    .accordion-content {
+        padding: 0 1.1rem 1.2rem 1.1rem;
+    }
+    .btn-sturla, .btn-whatsapp {
+        width: 100%;
+        font-size: 1.3rem;
+    }
+}
+
 .transport-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
