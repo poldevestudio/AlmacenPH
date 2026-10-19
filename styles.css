@@ -1160,7 +1160,7 @@ footer a:hover {
 .store-img-wrapper {
     position: relative;
     overflow: hidden;
-    height: 310px;
+    height: 380px;
 }
 
 .store-badge {
@@ -1443,7 +1443,7 @@ footer a:hover {
     }
     
     .store-img-wrapper {
-        height: 260px;
+        height: 320px;
     }
     
     .history-img-wrapper {
