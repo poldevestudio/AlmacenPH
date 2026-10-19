@@ -94,7 +94,7 @@ main {
 main.historia-main-container {
     max-width: 100%;
     padding: 4rem 5%;
-    background-image: linear-gradient(rgba(12, 20, 16, 0.35), rgba(12, 20, 16, 0.45)), url('img/atardecer-isla.jpg');
+    background-image: linear-gradient(rgba(10, 16, 12, 0.22), rgba(10, 16, 12, 0.28)), url('img/atardecer-isla.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -103,37 +103,44 @@ main.historia-main-container {
 main.historia-main-container .content-section {
     max-width: 1200px;
     margin: 0 auto 3rem auto;
-    background: rgba(16, 26, 20, 0.82);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    color: #f7faf5;
+    background: rgba(12, 22, 16, 0.52);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.40);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
 }
 
 main.historia-main-container .content-section h2 {
     color: #a3e4b7;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     border-bottom: 2px dashed rgba(163, 228, 183, 0.35);
 }
 
 main.historia-main-container .content-section h3 {
     color: #d1f2dc;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 main.historia-main-container .content-section p,
 main.historia-main-container .content-section ul,
 main.historia-main-container .content-section li {
-    color: #f0f4ee;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 main.historia-main-container .content-section strong {
     color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
 }
 
 main.historia-main-container .tip-viajero {
-    background: rgba(45, 75, 55, 0.65);
+    background: rgba(32, 60, 42, 0.58);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border-left: 4px solid #81c784;
-    color: #e8f5e9;
+    color: #f0fdf4;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
@@ -142,15 +149,17 @@ main.historia-main-container .tip-viajero strong {
 }
 
 main.historia-main-container .history-media-card {
-    background: rgba(22, 34, 26, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(18, 28, 22, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 main.historia-main-container .history-caption {
-    background: rgba(18, 28, 22, 0.95);
+    background: rgba(14, 22, 17, 0.75);
     color: #d1fae5;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 main.historia-main-container .history-caption strong {
@@ -158,32 +167,38 @@ main.historia-main-container .history-caption strong {
 }
 
 main.historia-main-container .postal-card {
-    background: rgba(22, 34, 26, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(18, 28, 22, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 main.historia-main-container .postal-info {
-    background: rgba(18, 28, 22, 0.95);
+    background: rgba(14, 22, 17, 0.75);
 }
 
 main.historia-main-container .postal-title {
     color: #d1fae5;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 main.historia-main-container .transport-accordion {
-    background: rgba(26, 38, 30, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(18, 28, 22, 0.58);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 main.historia-main-container .transport-accordion[open] {
-    background: rgba(20, 32, 24, 0.96);
+    background: rgba(14, 22, 17, 0.75);
     border-color: #81c784;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
 main.historia-main-container .accordion-title-wrap h3 {
     color: #a3e4b7;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 main.historia-main-container .accordion-title-wrap h3 small {
@@ -196,15 +211,17 @@ main.historia-main-container .accordion-chevron {
 }
 
 main.historia-main-container .accordion-header:hover {
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 main.historia-main-container .accordion-content p {
-    color: #f0f4ee;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 main.historia-main-container .transport-points li {
-    color: #f0f4ee;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 main.historia-main-container .transport-points li strong {
