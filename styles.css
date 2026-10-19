@@ -669,3 +669,96 @@ footer a:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(92, 141, 109, 0.35);
 }
+
+/* ===================================================
+   SECCIÓN: MARCAS QUE TRABAJAMOS (CARRUSEL INFINITO)
+   =================================================== */
+.brands-section {
+    padding: 2.2rem 2rem;
+    overflow: hidden;
+}
+
+.brands-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1.8rem;
+    position: relative;
+    padding: 0.6rem 0;
+    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.brands-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: scrollBrands 32s linear infinite;
+    align-items: center;
+}
+
+.brands-track:hover {
+    animation-play-state: paused;
+}
+
+.brand-item {
+    background: #ffffff;
+    border: 1px solid rgba(226, 240, 203, 0.9);
+    border-radius: 14px;
+    height: 84px;
+    min-width: 160px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.brand-item:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 22px rgba(92, 141, 109, 0.16);
+    border-color: #5c8d6d;
+}
+
+.brand-item img {
+    max-height: 52px;
+    max-width: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.brand-item:hover img {
+    transform: scale(1.08);
+}
+
+@keyframes scrollBrands {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 0.75rem));
+    }
+}
+
+@media (max-width: 600px) {
+    .brands-section {
+        padding: 1.8rem 1.2rem;
+    }
+    .brands-track {
+        gap: 1rem;
+        animation: scrollBrands 24s linear infinite;
+    }
+    .brand-item {
+        height: 70px;
+        min-width: 130px;
+        padding: 8px 14px;
+    }
+    .brand-item img {
+        max-height: 42px;
+        max-width: 98px;
+    }
+}
