@@ -92,6 +92,7 @@ nav ul li a:hover {
     border-bottom: 2px solid #e2f0cb;
 }
 
+.hero h1,
 .hero h2 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
@@ -358,7 +359,8 @@ footer a:hover {
         padding: 4.5rem 5%;
         background-position: center 65%;
     }
-    .hero h2 {
+    .hero h1,
+.hero h2 {
         font-size: 2.5rem;
     }
     main.historia-main-container {
